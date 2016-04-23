@@ -1087,6 +1087,8 @@ pre code
     font-size: 1.4rem;
     line-height: 1.6rem;
 
+    position: relative;
+
     display: inline-block;
 
     height: 3.2rem;
@@ -2702,6 +2704,39 @@ textarea.form-input
     margin: .5rem;
 
     border-bottom: .1rem solid #efefef;
+}
+.arrow
+{
+    margin-left: 50px;
+}
+.arrow:after
+{
+    display: inline-block;
+
+    width: 0;
+    height: 0;
+    margin: 0 0 0 3px;
+
+    content: '';
+
+    border-width: 10px 5px 0 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent;
+}
+.arrow.reverse:after
+{
+    border-width: 0 5px 10px 5px;
+    border-color: transparent transparent #333;
+}
+.btn-primary.arrow:after,
+.btn-primary .arrow:after
+{
+    border-color: #fff transparent transparent;
+}
+.btn-primary.arrow.reverse:after,
+.btn-primary .arrow.reverse:after
+{
+    border-color: transparent transparent #fff;
 }
 .loading
 {
