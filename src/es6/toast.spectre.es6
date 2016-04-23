@@ -8,7 +8,6 @@
 				let clear = el.children[c]
 				clear.addEventListener('click',function(e) {
 					e.preventDefault();
-					console.log('TOAST CLICK')
 					clear.parentElement.setAttribute('class',`${clear.parentElement.getAttribute('class')} hide`)
 				})
 				// return false
