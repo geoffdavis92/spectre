@@ -1464,26 +1464,8 @@
             </div>
             <section class="notes">
                 <p>Add a container element with the class <code>menu</code>. And add child elements with the classname <code>menu-item</code>. You can separate menu items with a <code>divider</code> or <code>menu-header</code>. <!-- @geoffdavis92: Stiked this sentence, added following sentence to showcase javascript.  --><strike>Spectre.css does not include JavaScript code, you will need to implement your JS to interact with the menus.</strike></p>
-                <p>Click the button below to access a menu using <code>menu.spectre.js</code>.</p>
+                <p>To view an interactive menu, go to the <a href="#menu-js">menu.spectre.js</a> section</code>.</p>
             </section>
-            
-            <!-- @geoffdavis92: added this test menu trigger button and following menu to showcase js behavior -->
-                <a data-target="testMenu" class="btn" data-toggle="menu">Open Menu</a>
-                <div class="menu-container menu-toggle hide" id="testMenu" style="max-width:500px;">
-                    <ul class="menu">
-                        <li class="menu-header">
-                            <span class="menu-header-text">JS Menu</span>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#!" style="font-weight:500;">Page 1</a></li>
-                        <li class="menu-item">
-                            <a href="#!" style="font-weight:500;">Page 2</a></li>
-                        <li class="menu-item">
-                            <a href="#!" style="font-weight:500;">Page 3</a></li>
-                    </ul>
-                </div>
-                <br>
-                <br>
             <!-- menus example -->
 <pre class="code lang-html">
 &lt;<span class="tag">ul</span> <span class="atn">class</span>=<span class="atv">&quot;menu&quot;</span>&gt;
@@ -1826,32 +1808,8 @@
                 <p>Add a container element with the class <code>modal</code>. And add a real container <code>modal-container</code> and overlay <code>modal-overlay</code> inside it. You can add child elements with the class name <code>modal-header</code>, <code>modal-content</code> and <code>modal-footer</code> - any or all of them. </p>
                 <!-- @geoffdavis92: stike this sentence, appended correct sentence showcasing JS -->
                 <p><strike>Spectre.css does not include JavaScript code, you will need to implement your JS to interact with modals. To make a modal appear, add the class <code>active</code> to the <code>modal</code> container</strike></p>
-                <p>Click the button below to open a test modal using <code>modal.spectre.js</code>!</p>
+                <p>To view an interactive modal, go to the <a href="#modal-js">modal.spectre.js</a> section.</p>
             </section>
-
-            <!-- @geoffdavis92: add modal code to test JS -->
-                <a class="btn btn-primary" href="#testModal" data-open="modal">Open modal</a>
-                <div class="modal" id="testModal">
-                    <div class="modal-overlay"></div>
-                    <div class="modal-container">
-                        <div class="modal-header">
-                            <a href="#testModal" class="btn btn-clear float-right" data-close="modal"></a>
-                            <p>This is a modal opened with javascript!.</p>
-                        </div>
-                        <div class="modal-body">
-                            <p>You activated this using <code>modal.spectre.js</code>!</p>
-                            <p>You may close this one of 3 ways:</p>
-                            <ul>
-                                <li>Click the "&times;" button in the top-right</li>
-                                <li>Click the "close" button in the bottom-right</li>
-                                <li>Click anywhere outside this modal.</li>
-                            </ul>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#testModal" class="btn btn-primary" data-close="modal">Close</a>
-                        </div>
-                    </div>
-                </div>
 
             <!-- modals example -->
 <pre class="code lang-html">
