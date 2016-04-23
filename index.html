@@ -144,6 +144,11 @@
                             utilities
                         </a>
                     </li>
+                    <li class="tab-item">
+                        <a href="#javascript">
+                            javascript
+                        </a>
+                    </li>
                 </ul>
             </section>
             <section class="notes text-center">
@@ -894,6 +899,11 @@
                     <li class="tab-item">
                         <a href="#utilities">
                             utilities
+                        </a>
+                    </li>
+                    <li class="tab-item">
+                        <a href="#javascript">
+                            javascript
                         </a>
                     </li>
                 </ul>
@@ -2042,6 +2052,11 @@
                             utilities
                         </a>
                     </li>
+                    <li class="tab-item">
+                        <a href="#javascript">
+                            javascript
+                        </a>
+                    </li>
                 </ul>
             </section>
             <section class="notes text-center">
@@ -2051,7 +2066,6 @@
                     <a href="#text" class="btn btn-primary">text</a>
                     <a href="#shapes" class="btn btn-primary">shapes</a>
                     <a href="#loading" class="btn btn-primary">loading</a>
-                    <a href="#javascript" class="btn btn-primary">javascript</a>
                 </div>
             </section>
         </section>
@@ -2187,17 +2201,146 @@
     </section>
 
     <section id="javascript" class="grid-960">
-            <section class="notes">
-                <p><strong>Javascript</strong> files are included to add interaction with several spectre.css components; currently, there are interactions for <code>.menu</code>, <code>.modal</code>, and <code>.toast</code>. Loading the javascript files and adding the appropriate HTML attributes are all you need to add some interaction to your components!</p>
-                <hr>
-            </section>
-            <!-- loading example -->
+        <section class="notes text-center">
+            <ul class="tab inline-flex">
+                <li class="tab-item">
+                    <a href="#elements">
+                        elements
+                    </a>
+                </li>
+                <li class="tab-item">
+                    <a href="#components">
+                        components
+                    </a>
+                </li>
+                <li class="tab-item">
+                    <a href="#utilities">
+                        utilities
+                    </a>
+                </li>
+                <li class="tab-item active">
+                    <a href="#javascript">
+                        javascript
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="notes text-center">
+            <div class="btn-group">
+                <a href="#menu-js" class="btn btn-primary">menu</a>
+                <a href="#modal-js" class="btn btn-primary">modal</a>
+                <a href="#toast-js" class="btn btn-primary">toast</a>
+            </div>
+        </section>
+        <section class="notes">
+            <p><strong>Javascript</strong> files are included to add interaction with several spectre.css components; currently, there are interactions for <code>.menu</code>, <code>.modal</code>, and <code>.toast</code>. Loading the javascript files and adding the appropriate HTML attributes are all you need to add some interaction to your components!</p>
+        </section>
+
+        <section id="menu-js" class="notes">
+            <p>The <strong>Menu</strong> element utilizes a button, anchor link, or other element with a <code>data-toggle="menu"</code> attribute to trigger the menu. In order to use this interaction, you must wrap the <code>.menu</code> element in a <code>.menu-container.menu-toggle</code> element, and set the wrapper's <code>id</code> attribute. Set the <code>data-target</code> attribute of the trigger element to the <code>id</code> of the wrapper element.</p>
+        </section>
+        <button class="btn btn-primary" data-toggle="menu" data-target="optionMenu">Toggle Menu</button>
+        <div id="optionMenu" class="menu-container menu-toggle hide" style="max-width:250px">
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#!">Option 1</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#!">Option 2</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#!">Option 3</a>
+                </li>
+            </ul>
+        </div>
+            <!-- menu.js example -->
 <pre class="code lang-html">
-<span class="com">&lt;!-- loading element --&gt;</span>
-&lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;loading&quot;</span>&gt;&lt;<span class="tag">/div</span>&gt;
+<span class="com">&lt;!-- menu element w/javascript --&gt;</span>
+
+<span class="com">&lt;!-- trigger element --&gt;</span>
+&lt;<span class="tag">button</span> <span class="atn">class</span>=<span class="atv">&quot;btn btn-primary&quot;</span> <span class="atn">data-toggle</span>=<span class="atv">&quot;menu&quot;</span> <span class="atn">data-target</span>=<span class="atv">&quot;optionMenu&quot;</span>&gt;Toggle Menu&lt;<span class="tag">/button</span>&gt;
+
+<span class="com">&lt;!-- menu element --&gt;</span>
+&lt;<span class="tag">div</span> <span class="atn">id</span>=<span class="atv">&quot;optionMenu&quot;</span> <span class="atn">class</span>=<span class="atv">&quot;menu-container menu-toggle hide&quot;</span>&gt;
+    &lt;<span class="tag">ul</span> <span class="atn">class</span>=<span class="atv">&quot;menu&quot;</span>&gt;
+        &lt;<span class="tag">li</span> <span class="atn">class</span>=<span class="atv">&quot;menu-item&quot;</span>&gt;
+            Option 1
+        &lt;<span class="tag">/li</span>&gt;
+        &lt;<span class="tag">li</span> <span class="atn">class</span>=<span class="atv">&quot;menu-item&quot;</span>&gt;
+            Option 2
+        &lt;<span class="tag">/li</span>&gt;
+        &lt;<span class="tag">li</span> <span class="atn">class</span>=<span class="atv">&quot;menu-item&quot;</span>&gt;
+            Option 3
+        &lt;<span class="tag">/li</span>&gt;
+    &lt;<span class="tag">/ul</span>&gt;
+&lt;<span class="tag">/div</span>&gt;
 </pre>
 
+        <section id="modal-js" class="notes">
+            <p>The <strong>Modal</strong> element utilizes a button, anchor link, or other element with a <code>data-toggle="menu"</code> attribute to trigger the menu. In order to use this interaction, you must wrap the <code>.menu</code> element in a <code>.menu-container.menu-toggle</code> element, and set the wrapper's <code>id</code> attribute. Set the <code>data-target</code> attribute of the trigger element to the <code>id</code> of the wrapper element.</p>
         </section>
+        <a class="btn btn-primary" href="#showcaseModal" data-open="modal">Open Modal</a>
+        <div id="showcaseModal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <div class="modal-header">
+                    <a href="#showcaseModal" data-close="modal" class="btn btn-clear float-right"></a>
+                    <p class="modal-title">Showcase Modal</p>
+                </div>
+                <div class="modal-body">
+                    <p>You opened this modal with javascript!</p>
+                </div>
+                <div class="modal-footer"><a href="#showcaseModal" data-close="modal" class="btn btn-primary">Close</a></div>
+            </div>
+        </div>
+
+            <!-- modal.js example -->
+<pre class="code lang-html">
+<span class="com">&lt;!-- modal element w/javascript --&gt;</span>
+
+<span class="com">&lt;!-- trigger element --&gt;</span>
+&lt;<span class="tag">a</span> <span class="atn">class</span>=<span class="atv">&quot;btn btn-primary&quot;</span> <span class="atn">href</span>=<span class="atv">&quot;#showcaseModal&quot;</span> <span class="atn">data-open</span>=<span class="atv">&quot;modal&quot;</span>&gt;Open Modal&lt;<span class="tag">/a</span>&gt;
+
+<span class="com">&lt;!-- modal element --&gt;</span>
+&lt;<span class="tag">div</span> <span class="atn">id</span>=<span class="atv">&quot;showcaseModal&quot;</span> <span class="atn">class</span>=<span class="atv">&quot;modal&quot;</span>&gt;
+    &lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;modal-overlay&quot;</span>&gt;&lt;<span class="tag">/div</span>&gt;
+    &lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;modal-container&quot;</span>&gt;
+        &lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;modal-header&quot;</span>&gt;
+            &lt;<span class="tag">p</span> <span class="atn">class</span>=<span class="atv">&quot;modal-title&quot;</span>&gt;Showcase Modal&lt;<span class="tag">/p</span>&gt;
+        &lt;<span class="tag">/div</span>&gt;
+        &lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;modal-body&quot;</span>&gt;
+            &lt;<span class="tag">p</span>&gt;You opened this modal with javascript!&lt;<span class="tag">/p</span>&gt;
+        &lt;<span class="tag">/div</span>&gt;
+        &lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;modal-footer&quot;</span>&gt;
+            &lt;<span class="tag">a</span> <span class="atn">class</span>=<span class="atv">&quot;btn btn-primary&quot;</span> <span class="atn">href</span>=<span class="atv">&quot;#showcaseModal&quot;</span> <span class="atn">data-close</span>=<span class="atv">&quot;modal&quot;</span>&gt;Close&lt;<span class="tag">/a</span>&gt;
+        &lt;<span class="tag">/div</span>&gt;
+    &lt;<span class="tag">/div</span>&gt;
+&lt;<span class="tag">/div</span>&gt;
+</pre>
+
+        <section id="toast-js" class="notes">
+            <p>The interactive <strong>Toast</strong> element does not add any extra elements; instead, it requires that a <code>.btn.btn-clear</code> or <code>.close-toast</code> element be present to act as the closing button. This closing element must not be nested in order to function properly.</p>
+        </section>
+        <div class="toast" style="max-width: 375px; margin-bottom: 10px">
+            <button class="btn btn-clear float-right"></button>
+            Interactive toast! Click the "&times;" to clear.
+        </div>
+        <div class="toast" style="max-width: 375px; margin-top: 10px">
+            Interactive toast! <a style="cursor: pointer;" class="clear-toast">Click here</a> to close.
+        </div>
+
+<pre class="code lang-html">
+&lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;toast&quot;</span>&gt;
+    &lt;<span class="tag">button</span> <span class="atn">class</span>=<span class="atv">&quot;btn btn-clear float-right&quot;</span>&gt;&lt;<span class="tag">/button</span>&gt;
+    Interactive toast! Click the "&times;" to clear.
+&lt;<span class="tag">/div</span>&gt;
+
+&lt;<span class="tag">div</span> <span class="atn">class</span>=<span class="atv">&quot;toast&quot;</span>&gt;
+    Interactive toast! &lt;<span class="tag">a</span> <span class="atn">class</span>=<span class="atv">&quot;btn btn-clear float-right&quot;</span>&gt;&lt;<span class="tag">/a</span>&gt; to close.
+&lt;<span class="tag">/div</span>&gt;
+</pre>
+
+</section>
 
     <footer class="bg-grey">
         <section id="copyright" class="grid-footer grid-960">

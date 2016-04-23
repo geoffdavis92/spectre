@@ -4,7 +4,7 @@
 	for (let i=0;i<arr.length;i++) {
 		let el = arr[i]
 		for(let c=0;c<el.children.length;c++) {
-			if (el.children[c].getAttribute('class').indexOf('btn-clear')) {
+			if (el.children[c].getAttribute('class').indexOf('btn-clear') || el.children[c].getAttribute('class').indexOf('clear-toast')) {
 				let clear = el.children[c]
 				clear.addEventListener('click',function(e) {
 					e.preventDefault();

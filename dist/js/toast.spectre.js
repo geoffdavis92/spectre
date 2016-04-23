@@ -6,7 +6,7 @@
 	for (var i = 0; i < arr.length; i++) {
 		var el = arr[i];
 		for (var c = 0; c < el.children.length; c++) {
-			if (el.children[c].getAttribute('class').indexOf('btn-clear')) {
+			if (el.children[c].getAttribute('class').indexOf('btn-clear') || el.children[c].getAttribute('class').indexOf('clear-toast')) {
 				(function () {
 					var clear = el.children[c];
 					clear.addEventListener('click', function (e) {
