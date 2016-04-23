@@ -459,6 +459,12 @@ a:focus
 {
     color: #283176;
 }
+hr
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #efefef;
+}
 [disabled],
 .disabled
 {
