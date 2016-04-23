@@ -24,7 +24,17 @@ Download the compiled and minified [Spectre CSS file](https://github.com/picture
 
 And include it in your website or Web app &lt;head&gt; part.
 
-`<link rel="stylesheet" href="dist/spectre.min.css" />`
+`<link rel="stylesheet" href="dist/css/spectre.min.css" />`
+
+To include the javascript files, include it at the end of your document near your other javascript files.
+
+`<script src="dist/js/FILE.spectre.min.js"></script>`
+
+The following javascript files are available for linking:
+
+* `menu.spectre.js`
+* `modal.spectre.js`
+* `toast.spectre.js`
 
 ### Compiling custom version
 
