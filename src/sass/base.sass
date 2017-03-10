@@ -1,0 +1,64 @@
+// Base
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: @html-font-size;
+  line-height: @html-line-height;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: @body-bg;
+  color: @body-font-color;
+  font-family: @body-font-family;
+  font-size: @body-font-size;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:active,
+  &.active {
+    color: @dark-link-color;
+    text-decoration: underline;
+  }
+}
+
+// Focus state
+:focus {
+  .control-shadow();
+  outline: 0;
+}
+
+// Icons
+.btn,
+.toast,
+.menu {
+  .icon {
+    font-size: 1.3333em;
+    line-height: .8em;
+    vertical-align: -20%;
+  }
+}
+
+// Caret
+.icon-caret {
+  border-top: .4rem solid currentColor;
+  border-right: .4rem solid transparent;
+  border-left: .4rem solid transparent;
+  display: inline-block;
+  height: 0;
+  margin: 0;
+  vertical-align: middle;
+  width: 0;
+}

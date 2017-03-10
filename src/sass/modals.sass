@@ -1,0 +1,75 @@
+// Modals
+.modal {
+  align-items: center;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: @layout-gutter;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &:target,
+  &.active {
+    display: flex;
+    opacity: 1;
+    z-index: 1988;
+
+    .modal-overlay {
+      background: fade(@dark-color, 50%);
+      bottom: 0;
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .modal-container {
+      animation: slide-down .2s;
+      max-width: 64rem;
+    }
+  }
+
+  &.modal-sm {
+    .modal-container {
+      max-width: 32rem;
+    }
+  }
+}
+
+.modal-container {
+  background: @light-bg-color;
+  border-radius: @border-radius;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  .shadow;
+  text-align: left;
+
+  z-index: 1988;
+
+  .modal-header {
+    padding: 1.5rem;
+
+    .modal-title {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+  }
+
+  .modal-body {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .modal-footer {
+    padding: 1.5rem;
+    text-align: right;
+  }
+}

@@ -1,0 +1,58 @@
+// Media
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.video-responsive {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%; /* Default 16:9, you can calculate this value by dividing 9 by 16 */
+  }
+
+  iframe,
+  object,
+  embed {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+  video {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.video-responsive-4-3 {
+  &::before {
+    padding-bottom: 75%; /* 4:3 */
+  }
+}
+
+.video-responsive-1-1 {
+  &::before {
+    padding-bottom: 100%; /* 1:1 */
+  }
+}
+
+.figure {
+  margin: 0 0 @layout-gutter 0;
+
+  .figure-caption {
+    color: @dark-gray-color;
+    margin-top: @layout-gutter;
+  }
+}

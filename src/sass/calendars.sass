@@ -1,0 +1,226 @@
+// Calendars
+.calendar {
+  border: .1rem solid @border-color;
+  border-radius: @border-radius;
+  display: block;
+  text-align: center;
+
+  .calendar-nav {
+    align-content: space-between;
+    align-items: center;
+    background: @bg-color;
+    border-top-left-radius: @border-radius;
+    border-top-right-radius: @border-radius;
+    display: flex;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .calendar-header,
+  .calendar-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 0;
+
+    .calendar-date {
+      flex: 0 0 14.28%;
+    }
+  }
+
+  .calendar-header {
+    background: @bg-color;
+    border-bottom: .1rem solid @border-color;
+    color: @gray-color;
+    font-size: 1.2rem;
+  }
+
+  .calendar-body {
+    color: @dark-gray-color;
+
+    .calendar-date {
+      border: 0;
+      padding: .6rem;
+
+      .date-item {
+        color: @dark-gray-color;
+      }
+
+      &.prev-month .date-item,
+      &.next-month .date-item,
+      .date-item:disabled {
+        cursor: default;
+        opacity: .25;
+        pointer-events: none;
+      }
+    }
+
+    .date-item {
+      appearance: none;
+      background: transparent;
+      border: .1rem solid transparent;
+      border-radius: 50%;
+      .control-transition();
+      cursor: pointer;
+      display: inline-block;
+      height: 3.2rem;
+      line-height: 2rem;
+      padding: .5rem;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 3.2rem;
+
+      &.date-today {
+        background: @secondary-color;
+        color: @primary-color;
+      }
+
+      &:focus,
+      &:hover {
+        background: @light-secondary-color;
+        border-color: @dark-secondary-color;
+        color: @primary-color;
+        text-decoration: none;
+      }
+      &:active,
+      &.active {
+        background: @dark-primary-color;
+        border-color: darken(@dark-primary-color, 5%);
+        color: @light-color;
+      }
+
+      // Calendar badge support
+      &.badge {
+        &::after {
+          position: absolute;
+          top: .4rem;
+          right: .4rem;
+          transform: translate(50%, -50%);
+        }
+      }
+    }
+  }
+
+  .calendar-range {
+    position: relative;
+
+    .date-item {
+      &::before {
+        background: @secondary-color;
+        content: "";
+        height: 3.2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        z-index: -9;
+      }
+    }
+
+    & + .calendar-range {
+      .date-item {
+        &::before {
+          left: 0;
+          width: 100%;
+        }
+        &.active {
+          &::before {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  &.calendar-lg {
+    .calendar-body {
+      padding: 0;
+
+      .calendar-date {
+        border-bottom: .1rem solid @border-color;
+        border-right: .1rem solid @border-color;
+        display: flex;
+        flex-direction: column;
+        height: 11rem;
+        overflow: hidden;
+        padding: 0;
+
+        &:nth-child(7n) {
+          border-right: 0;
+        }
+        &:nth-last-child(-n+7) {
+          border-bottom: 0;
+        }
+      }
+
+      .date-item {
+        align-self: flex-end;
+        flex: 0 0 2.4rem;
+        height: 2.4rem;
+        margin-right: .5rem;
+        margin-top: .5rem;
+        padding: .1rem;
+        width: 2.4rem;
+
+        &.badge {
+          &::after {
+            top: .2rem;
+            right: .2rem;
+          }
+        }
+      }
+
+      .calendar-range {
+        .date-item {
+          &::before {
+            height: 2.4rem;
+            left: auto;
+            right: 0;
+            top: 1.7rem;
+            width: 2.2rem;
+          }
+        }
+
+        & + .calendar-range {
+          .date-item {
+            &::before {
+              left: 0;
+              width: 100%;
+            }
+            &.active {
+              &::before {
+                right: 1.7rem;
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .calendar-events {
+      flex-grow: 1;
+      line-height: 1;
+      overflow-y: auto;
+      padding: .5rem;
+    }
+
+    .calendar-event {
+      background: @secondary-color;
+      border-radius: @border-radius;
+      color: @primary-color;
+      font-size: 1.2rem;
+      display: block;
+      margin: .2rem auto;
+      overflow: hidden;
+      padding: .3rem .4rem;
+      text-align: left;
+      text-overflow: ellipsis;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+  }
+}
