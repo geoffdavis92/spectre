@@ -1,106 +1,13 @@
 // Navigation
 .breadcrumb,
 .tab,
-.pagination {
+.pagination,
+.nav {
   list-style: none;
   margin: .5rem 0;
 }
-// Breadcrumbs
-.breadcrumb {
-  padding: 1.2rem;
 
-  .breadcrumb-item {
-    display: inline-block;
-    margin: 0;
-
-    a {
-      text-decoration: none;
-    }
-
-    &:last-child {
-      &,
-      a {
-        color: lighten(@body-font-color, 20%);
-        pointer-events: none;
-      }
-    }
-
-    &:not(:last-child) {
-      &::after {
-        color: @control-color;
-        content: "/";
-        padding: 0 .4rem;
-      }
-    }
-  }
-}
-// Tabs
-.tab {
-  border-bottom: .1rem solid @control-color;
-  display: flex;
-
-  .tab-item {
-    margin-bottom: -.1rem;
-
-    a {
-      border-bottom: .2rem solid transparent;
-      color: @body-font-color;
-      display: block;
-      padding: .5rem 1.5rem;
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        border-bottom-color: @core-color;
-        color: @core-link-color;
-      }
-    }
-
-    &.active {
-      a {
-        border-bottom-color: darken(@core-color, 10%);
-        color: darken(@core-link-color, 10%);
-      }
-    }
-  }
-
-  &.tab-block {
-    .tab-item {
-      flex: 1 0 auto;
-      text-align: center;
-    }
-  }
-}
-// Pagination
-.pagination {
-  display: inline-block;
-  padding: 1.2rem;
-
-  .page-item {
-    display: inline-block;
-
-    span {
-      display: inline-block;
-      padding: .6rem .5rem;
-    }
-    a {
-      border-radius: .3rem;
-      display: inline-block;
-      margin: 0 .1rem;
-      padding: .6rem 1.2rem;
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        background-color: lighten(@core-color, 40%);
-      }
-    }
-
-    &.active {
-      a {
-        background-color: @core-color;
-        color: @core-text-color;
-      }
-    }
-  }
-}
+@import 'breadcrumbs.less';
+@import 'tabs.less';
+@import 'pagination.less';
+@import 'navs.less';

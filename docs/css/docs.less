@@ -1,0 +1,283 @@
+/*! Spectre.css Docs | MIT License | github.com/picturepan2/spectre */
+/* Spectre version */
+.version::after {
+  content: "0.2.8";
+}
+
+/* Spectre docs style */
+.bg-gray {
+  background: #f6f6f6;
+  color: #666;
+  padding: 1rem;
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.bg-primary {
+  background: #5764c6;
+  color: #fff;
+  padding: 1rem;
+}
+
+.section-header {
+  padding: 1rem .5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 499;
+}
+
+.section-hero {
+  position: relative;
+  z-index: 999;
+}
+
+.grid-header {
+  .navbar {
+    height: 4rem;
+  }
+
+  .navbar-section {
+    padding: 0;
+  }
+
+  .navbar-brand {
+    color: #444;
+  }
+
+  .btn-link {
+    color: #666;
+    padding-left: .6rem;
+    padding-right: .6rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #444;
+      opacity: .75;
+    }
+  }
+}
+
+.grid-hero {
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+
+  h1 {
+    color: #555;
+    font-weight: 400;
+    font-size: 3.2rem;
+  }
+  h2 {
+    color: #666;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3rem;
+    margin-bottom: 3rem;
+
+    u {
+      border-bottom: .2rem solid #666;
+      padding-bottom: .1rem;
+      text-decoration: none;
+    }
+  }
+
+  .card {
+    background: none;
+    border: 0;
+    color: #666;
+    padding: 1rem;
+
+    .card-title {
+      color: #5764c6;
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.grid-footer {
+  color: #888;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+
+  a {
+    color: #666;
+  }
+}
+
+.grid-ads {
+  border-radius: .2rem;
+  display: block;
+  height: 12rem;
+  margin: 2rem auto;
+  max-width: 64rem;
+  padding: 1rem;
+  width: 100%
+}
+
+.docs-content {
+  padding-top: 0;
+
+  .container {
+    padding: 1rem;
+  }
+
+  header {
+    color: #444;
+    padding-top: 6rem;
+  }
+
+  .notes {
+    margin: 4rem 0;
+    color: #666;
+  }
+
+  .docs-block {
+    border-radius: .2rem;
+    padding: 1rem .5rem;
+  }
+
+  .docs-dot {
+    border-radius: 50%;
+    display: inline-block;
+    height: 1rem;
+    padding: 0;
+    width: 1rem;
+  }
+
+  .docs-table {
+    th,
+    td {
+      padding: 1.5rem .5rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .code {
+    .com {
+      color: #c5c5c5;
+    }
+    .tag {
+      color: #5764c6;
+    }
+    .atn {
+      color: #666;
+    }
+    .atv {
+      color: #e06870;
+    }
+  }
+
+  .empty .icon {
+    font-size: 4rem;
+  }
+
+  .form-autocomplete .menu {
+    position: static;
+  }
+
+  .example-tile-icon {
+    align-content: space-around;
+    align-items: center;
+    background: #5764c6;
+    border-radius: .2rem;
+    color: #fff;
+    display: flex;
+    font-size: 2.4rem;
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .navbar {
+    .navbar-section {
+      padding: 0 .5rem;
+    }
+  }
+
+  .docs-sidebar {
+    padding: 7rem 1rem;
+
+      .docs-nav {
+        position: relative;
+    }
+
+    @supports (position: sticky) {
+      .docs-nav {
+        position: sticky;
+        top: 8rem;
+
+        // A position: sticky; bug casues box-shadow generates width to the elements
+        .nav-item a:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+.docs-nav-clear {
+  display: none;
+}
+
+// Spectre.css Docs Mobile experience
+@media screen and (max-width: 600px) {
+  .grid-hero {
+    h2 {
+      font-size: 1.8rem;
+    }
+    .card {
+      padding: 0;
+    }
+  }
+
+  .docs-sidebar {
+    background: #fff;
+    height: 100%;
+    overflow-y: auto;
+    padding: 6rem 3rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform .2s ease;
+    width: 24rem;
+    z-index: 999;
+
+    &:target {
+      transform: translateX(0);
+      transition: transform .2s ease;
+
+      & + .docs-nav-clear {
+        display: block;
+      }
+    }
+  }
+
+  .docs-nav-clear {
+    background: rgba(0, 0, 0, .15);
+    display: none;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 499;
+  }
+}

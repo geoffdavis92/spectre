@@ -1,16 +1,14 @@
 // Cards
 .card {
-  background-color: #fff;
-  border-radius: .3rem;
+  background: @light-bg-color;
+  border: .1rem solid @border-color;
+  border-radius: @border-radius;
   display: block;
   margin: 0;
   padding: 0;
-  .shadow;
   text-align: left;
-  z-index: 999;
 
   .card-header,
-  .card-image,
   .card-body,
   .card-footer {
     padding: 1.5rem 1.5rem 0 1.5rem;
@@ -20,28 +18,30 @@
     }
   }
   .card-image {
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: 1.5rem;
 
     &:first-child {
       padding-top: 0;
 
       img {
-        border-top-left-radius: .3rem;
-        border-top-right-radius: .3rem;
+        border-top-left-radius: @border-radius;
+        border-top-right-radius: @border-radius;
+      }
+    }
+
+    &:last-child {
+      img {
+        border-bottom-left-radius: @border-radius;
+        border-bottom-right-radius: @border-radius;
       }
     }
   }
   .card-title {
-    font-size: 1.4em;
-    line-height: 1;
-    margin-bottom: .5rem;
-    margin-top: 0;
+    font-size: 2rem;
+    line-height: 1.4;
   }
   .card-meta {
-    color: lighten(@body-font-color, 50%);
-    font-size: 1em;
-    margin-bottom: 0;
-    margin-top: 0;
+    color: @gray-color;
+    font-size: 1.3rem;
   }
 }

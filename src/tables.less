@@ -2,18 +2,43 @@
 .table {
   border-collapse: collapse;
   border-spacing: 0;
+  text-align: left;
   width: 100%;
 
-  th,
+  &.table-striped {
+    tbody {
+      tr:nth-of-type(odd) {
+        background: @bg-color;
+      }
+    }
+  }
+  &.table-hover {
+    tbody {
+      tr {
+        &:hover {
+          background: @dark-bg-color;
+        }
+      }
+    }
+  }
+  &,
+  &.table-striped {
+    tbody {
+      tr {
+        &.active {
+          background: @dark-bg-color;
+        }
+      }
+    }
+  }
+
   td {
-    border-bottom: .1rem solid @core-border-color;
+    border-bottom: .1rem solid @border-color;
     padding: 1.5rem 1rem;
-    text-align: left;
   }
+  
   th {
-    border-color: darken(@core-border-color, 15%);
-  }
-  .selected {
-    background-color: lighten(@core-border-color, 2%);
+    border-bottom: .2rem solid @dark-color;
+    padding: 1.5rem 1rem;
   }
 }

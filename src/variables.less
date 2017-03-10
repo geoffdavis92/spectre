@@ -1,50 +1,56 @@
 // Core variables
 
 // Global
+@html-font-size: 10px;
+@html-line-height: 1.428571429;
 @body-bg: #fff;
 @body-font-color: #333;
 @body-font-size: 1.4rem;
-@body-font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", sans-serif;
 
-// Colors
-@core-color: #5764c6;
-@core-text-color: #fff;
-@core-link-color: #5764c6;
-@core-border-color: #efefef;
-@control-color: #c5c5c5;
+// Fonts
+// Credit: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+@base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+@fallback-font-family: "Helvetica Neue", sans-serif;
+@cjk-font-family: @base-font-family, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", @fallback-font-family;
+@body-font-family: @base-font-family, @fallback-font-family;
+
+// Sizes
+@layout-gutter: 1rem;
+@control-min-width: 18rem;
+@border-radius: .2rem;
+
+// Core colors
+@primary-color: #5764c6;
+@dark-primary-color: darken(@primary-color, 5%);
+@light-primary-color: lighten(@primary-color, 2%);
+@secondary-color: lighten(@primary-color, 40%);
+@dark-secondary-color: darken(@secondary-color, 5%);
+@light-secondary-color: lighten(@secondary-color, 2%);
+@dark-color: #333;
+@dark-gray-color: #666;
+@gray-color: #999;
+@light-gray-color: #ccc;
+@light-color: #fff;
+@link-color: @primary-color;
+@dark-link-color: darken(@link-color, 10%);
+@border-color: #efefef;
+@bg-color: #f8f8f8;
+@dark-bg-color: darken(@bg-color, 3%);
+@light-bg-color: #fff;
+
+// Control colors
 @control-color-success: #32b643;
-@control-color-info: #0193eb;
 @control-color-warning: #ffb700;
 @control-color-danger: #e85600;
 
-// Responsive Breakpoints
+// Meta colors
+@code-color: #e06870;
+@highlight-color: #ffe9b3;
+
+// Responsive breakpoints
 @size-xs: 480px;
 @size-sm: 600px;
 @size-md: 840px;
 @size-lg: 960px;
 @size-xl: 1280px;
-
-// Mixins
-.clearfix() {
-  &::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-}
-.toast-variant(@color) {
-  background-color: @color;
-  border-color: darken(@color, 2%);
-  color: @core-text-color;
-}
-.label-base {
-  border-radius: .2rem;
-  display: inline;
-  font-size: 1em;
-  padding: .1em .3em;
-  vertical-align: baseline;
-}
-.label-variant(@color) {
-  background-color: @color;
-  color: @core-text-color;
-}
+@size-2x: 1440px;
